@@ -1,0 +1,110 @@
+@import '../../../styles/base/variables';
+
+.exceed-desktop-container {
+    position: relative;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    background-color: $textColor;
+
+    .exceed-desktop {
+        padding: 9.6rem 0;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/imgs/Vector.svg');
+            background-repeat: no-repeat;
+            background-position: top;
+            filter: brightness(0) saturate(100%) invert(60%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%);
+            opacity: 0.1;
+            z-index: -1;
+        }
+    }
+}
+
+.exceed-desktop-frame {
+    position: relative;
+
+    .first-frame,
+    .second-frame {
+        background-color: #fff;
+        border-radius: 1.6rem;
+        box-shadow: 0 4px 40px 0 rgba(0, 0, 0, 0.32);
+        gap: 1rem;
+        padding: 1.6rem;
+        color: $textColor;
+        position: absolute;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+
+        span {
+            font-size: 1.4rem;
+        }
+    }
+
+    .first-frame {
+        top: -20px;
+        right: 0;
+        animation-name: float-first;
+    }
+
+    .second-frame {
+        bottom: 25%;
+        left: -30px;
+        animation-name: float-second;
+        animation-delay: 0.5s;
+    }
+}
+
+@keyframes float-first {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+
+    50% {
+        transform: translateY(-10px) translateX(-5px);
+    }
+}
+
+@keyframes float-second {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+
+    50% {
+        transform: translateY(8px) translateX(5px);
+    }
+}
+
+
+.exceed-desktop-content {
+    color: #fff;
+    padding-inline-start: 6rem;
+
+    h3 {
+        font-size: 3.2rem;
+    }
+
+    p {
+        padding-top: 4rem;
+        font-size: 1.6rem;
+        line-height: 2;
+        font-weight: 400;
+    }
+}
+
+.exceed-desktop-list {
+    padding-top: 4rem;
+    list-style: disc;
+    margin-inline-start: 2rem;
+}

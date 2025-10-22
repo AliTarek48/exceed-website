@@ -1,0 +1,35 @@
+@import '../../../styles/base/variables';
+
+.exceed-cloud {
+    background-color: $backColor;
+    padding: 9.6rem 0;
+
+    h2 {
+        font-size: 3.2rem;
+    }
+
+    &-text {
+        margin-top: 4rem;
+        font-size: 1.6rem;
+        font-style: normal;
+        line-height: 2;
+        color: $header;
+    }
+
+    &-list {
+        margin-top: 4rem;
+        list-style: disc;
+        margin-inline-start: 1.8rem;
+
+        li {
+
+            font-size: 1.6rem;
+            color: $header;
+            font-weight: 600;
+        }
+    }
+
+    img {
+        pointer-events: none;
+    }
+}

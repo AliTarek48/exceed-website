@@ -1,0 +1,33 @@
+import {
+  ApplicationConfig,
+  importProvidersFrom,
+  provideZoneChangeDetection,
+} from '@angular/core';
+import { provideRouter } from '@angular/router';
+
+import { provideClientHydration } from '@angular/platform-browser';
+import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
+import { provideTranslateService, TranslateModule } from '@ngx-translate/core';
+import { provideHttpClient, withFetch } from '@angular/common/http';
+import { LanguageGuard } from './guards/language.guard';
+import { provideAnimations } from '@angular/platform-browser/animations';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter([]),
+    provideClientHydration(),
+    provideHttpClient(withFetch()),
+    provideTranslateService({
+      loader: provideTranslateHttpLoader({
+        prefix: 'i18n/', // relative to public folder
+        suffix: '.json',
+      }),
+      fallbackLang: 'ar',
+      lang: 'ar',
+    }),
+    LanguageGuard,
+    importProvidersFrom(TranslateModule),
+    provideAnimations(),
+  ],
+};

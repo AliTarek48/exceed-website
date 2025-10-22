@@ -1,0 +1,31 @@
+@import '../../../styles/base/variables';
+
+.company-trust {
+    h2 {
+        font-size: 3.2rem;
+
+
+    }
+}
+
+.company-boxes {
+    margin-top: 8rem;
+    padding: 2.4rem;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0 4px 40px 0 rgba(159, 189, 230, 0.16);
+
+    h3,
+    p {
+        color: $header;
+    }
+
+
+
+    p {
+        line-height: 1.8;
+        font-size: 1.2rem;
+        font-style: normal;
+    }
+
+}

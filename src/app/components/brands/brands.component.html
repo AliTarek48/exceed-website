@@ -1,0 +1,40 @@
+<!-- <div class="carousel-container">
+  <owl-carousel-o [options]="customOptions">
+    @for (item of items; track item.name) {
+
+    <ng-template carouselSlide>
+      <div class="slide-content">
+        <img
+          [src]="'imgs/brand/' + item.name + '.svg'"
+          [alt]="item.name"
+          width="48"
+        />
+      </div>
+    </ng-template>
+    }
+  </owl-carousel-o>
+</div> -->
+
+<div class="marquee-container">
+  <div class="marquee-track">
+    @for (item of items; track item.name; let i = $index) {
+    <div class="marquee-item">
+      <img
+        [src]="'imgs/brand/' + item.name + '.svg'"
+        [alt]="item.name"
+        class="brand-logo"
+      />
+    </div>
+    }
+    <!-- Duplicate items for seamless loop -->
+    @for (item of items; track 'duplicate-' + item.name; let i = $index) {
+    <div class="marquee-item">
+      <img
+        [src]="'imgs/brand/' + item.name + '.svg'"
+        [alt]="item.name"
+        class="brand-logo"
+      />
+    </div>
+    }
+  </div>
+</div>

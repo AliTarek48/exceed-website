@@ -1,0 +1,115 @@
+@import './variables';
+$font-english: 'Inter', sans-serif;
+$font-arabic: 'Alexandria', sans-serif;
+
+// Base font size
+html {
+    font-size: 62.5%;
+
+    // Your existing responsive font sizes...
+}
+
+// Base body styles
+body {
+    // font-size: 1.6rem;
+    line-height: 1.6;
+    font-family: $font-english;
+    // height: 4000px;
+}
+
+// RTL/LTR font switching
+[lang="ar"],
+[dir="rtl"] {
+    body {
+        font-family: $font-arabic;
+        font-weight: 400;
+    }
+
+    // Arabic-specific typography adjustments
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: 700;
+        letter-spacing: 0;
+    }
+}
+
+[lang="en"],
+[dir="ltr"] {
+    body {
+        font-family: $font-english;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        letter-spacing: -0.02em;
+    }
+}
+
+
+.h-40 {
+    height: 4rem;
+}
+
+.section-top-space {
+    margin-top: 9.6rem;
+}
+
+
+.exceed-text {
+    position: relative;
+    color: $orange;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 14rem;
+        height: 6rem;
+        background-image: url('/imgs/icons/ellipse.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        z-index: -1;
+    }
+}
+
+.mt-40 {
+    margin-top: 4rem;
+}
+
+.fs-38 {
+    font-size: 3.8rem;
+}
+
+.main-text {
+    color: $header;
+    line-height: 2;
+    font-size: 1.6rem;
+}
+
+
+[appAnimateOnScroll] {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: none;
+}
+
+[appAnimateOnScroll].animate__animated {
+    opacity: 1;
+    transform: translateX(0);
+}

@@ -1,0 +1,21 @@
+<div class="app-container" [class.rtl]="isRTL" [class.ltr]="!isRTL">
+  @if (isLoading$ | async) {
+
+  <div class="initial-loader" role="status" aria-label="Loading application">
+    <div class="spinner" aria-hidden="true"></div>
+    <p>Loading...</p>
+  </div>
+  }
+
+  <div [class.hidden]="isLoading$ | async">
+    <router-outlet></router-outlet>
+  </div>
+
+  <app-navbar />
+
+  <main>
+    <router-outlet />
+  </main>
+
+  <app-footer />
+</div>

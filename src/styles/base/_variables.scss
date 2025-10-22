@@ -1,0 +1,67 @@
+// _variables.scss
+$primary: #3B008F;
+$textColor: #450099;
+$orange: #F06A26;
+$header: #4D5B7C;
+$label: #0D0D0D;
+$input: #B5B5B5;
+$backColor: #F4F8FD;
+$mainCardColor: #E4E7FF;
+$cardBorderColor: #E2E7F3;
+// Spacing scale based on REM (1rem = 10px)
+$spacing-unit: 1rem; // 10px
+$spacers: (
+    0: 0,
+    1: $spacing-unit * 0.4,
+    // 4px
+    2: $spacing-unit * 0.8,
+    // 8px
+    3: $spacing-unit * 1.2,
+    // 12px
+    4: $spacing-unit * 1.6,
+    // 16px
+    5: $spacing-unit * 2,
+    // 20px
+    6: $spacing-unit * 2.4,
+    // 24px
+    8: $spacing-unit * 3.2,
+    // 32px
+    10: $spacing-unit * 4,
+    // 40px
+    12: $spacing-unit * 4.8,
+    // 48px
+    16: $spacing-unit * 6.4,
+    // 64px
+    20: $spacing-unit * 8,
+    // 80px
+    24: $spacing-unit * 9.6,
+    // 96px
+    32: $spacing-unit * 12.8 // 128px
+);
+
+// Container max widths in REM
+$container-max-widths: (
+    sm: 54rem,
+    // 540px
+    md: 72rem,
+    // 720px
+    lg: 96rem,
+    // 960px
+    xl: 114rem,
+    // 1140px
+    xxl: 132rem // 1320px
+);
+
+// Border radii
+$border-radius-sm: 0.4rem; // 4px
+$border-radius: 0.8rem; // 8px
+$border-radius-lg: 1.2rem; // 12px
+$border-radius-xl: 1.6rem; // 16px
+$border-radius-2xl: 2.4rem; // 24px
+$border-radius-full: 50%;
+
+// Component sizes in REM
+$navbar-height: 8rem; // 80px
+$sidebar-width: 28rem; // 280px
+$button-height: 4.8rem; // 48px
+$input-height: 4.8rem; // 48px

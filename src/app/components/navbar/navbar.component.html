@@ -1,0 +1,123 @@
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container-fluid py-2">
+    <a class="navbar-brand d-flex flex-column gap-1" href="#">
+      <img src="/imgs/icons/logo.svg" alt="Exceed Logo" />
+      <!-- <img src="/imgs/icons/logo-ar.svg" alt="Exceed Logo" /> -->
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto gap-5">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            [routerLink]="getLocalizedPath('home')"
+            [class.active]="isActive('home')"
+          >
+            {{ "Home" | translate }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="getLocalizedPath('about')"
+            [class.active]="isActive('about')"
+          >
+            {{ "About Exceed" | translate }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="getLocalizedPath('about')">
+            {{ "Work Fields" | translate }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="getLocalizedPath('about')">
+            {{ "Packages" | translate }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="getLocalizedPath('about')">
+            {{ "Contact Us" | translate }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="getLocalizedPath('about')">
+            {{ "Exceed programs" | translate }}
+          </a>
+        </li>
+      </ul>
+
+      <div class="navbar-nav align-items-center">
+        <button class="btn btn-outline-light min-w-130px raduis-20 h-40">
+          {{ "CallUs" | translate }}
+        </button>
+
+        <!-- Separator -->
+        <div class="separator mx-3"></div>
+
+        <!-- Language Dropdown -->
+        <div class="dropdown">
+          <a
+            class="btn-language d-flex align-items-center gap-2"
+            type="button"
+            (click)="switchLanguage(currentLanguage == 'ar' ? 'en' : 'ar')"
+          >
+            <img
+              [src]="
+                currentLanguage === 'ar'
+                  ? '/icons/flag-en.png'
+                  : '/icons/flag-ar.png'
+              "
+              [alt]="currentLanguage === 'en' ? 'Saudi Flag' : 'US Flag'"
+              class="flag-icon"
+            />
+            <span class="language-text">
+              {{ currentLanguage === "en" ? "Ar" : "En" }}
+            </span>
+          </a>
+          <!-- <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <button
+                class="dropdown-item d-flex align-items-center gap-2"
+                (click)="switchLanguage('en')"
+              >
+                <img src="/icons/flag-en.png" alt="US Flag" class="flag-icon" />
+                <span>English</span>
+                @if (currentLanguage === 'en') {
+
+                <i class="bi bi-check2 ms-auto text-primary"></i>
+                }
+              </button>
+            </li>
+            <li>
+              <button
+                class="dropdown-item d-flex align-items-center gap-2"
+                (click)="switchLanguage('ar')"
+              >
+                <img
+                  src="/icons/flag-ar.png"
+                  alt="Saudi Flag"
+                  class="flag-icon"
+                />
+                <span>العربية</span>
+                @if (currentLanguage === 'ar') {
+
+                <i class="bi bi-check2 ms-auto text-primary"></i>
+                }
+              </button>
+            </li>
+          </ul> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

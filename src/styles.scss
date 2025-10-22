@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import './styles/base/global';
+@import './styles/base/variables';
+@import './styles/components/buttons';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+:root {
+    --direction: ltr;
+    --text-align: left;
+    --start: left;
+    --end: right;
+}
+
+[dir="rtl"] {
+    --direction: rtl;
+    --text-align: right;
+    --start: right;
+    --end: left;
+}
+
+body {
+    direction: var(--direction);
+    text-align: var(--text-align);
+    overflow-x: hidden;
+}
+
+
+/* For older browser support */
+.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+.ltr {
+    direction: ltr;
+    text-align: left;
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pointer {
+    cursor: pointer;
+}

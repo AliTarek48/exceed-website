@@ -1,0 +1,56 @@
+.counter-sec {
+    // margin-top: 8rem;
+
+    &-container {
+        background: url('/imgs/Facts.svg') 100% 100% no-repeat;
+        background-size: cover;
+        padding: 3rem 6.4rem;
+        border-radius: 3.2rem;
+        color: #fff;
+
+        .counter-content {
+            li {
+
+                position: relative;
+                padding-inline-end: 3rem;
+
+                &:not(:last-child)::before {
+                    content: '';
+                    position: absolute;
+                    inset-inline-end: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    height: 60px;
+                    width: 1px;
+                    background: rgba(255, 255, 255, 0.3);
+                }
+
+                span:first-child {
+                    padding-inline-end: 1rem;
+                }
+
+                span {
+
+                    font-size: 3.2rem;
+                    transition: all 0.3s ease;
+                }
+
+                .counter-number {
+                    display: inline-block;
+
+                    &.animated {
+                        // color: #ffd700; // Gold color when animated
+                        transform: scale(1.1);
+                        // text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+                    }
+                }
+
+                p {
+                    font-size: 1.6rem;
+                    font-weight: 300;
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,302 @@
+<div class="main-container">
+  <div class="animated-shapes">
+    <div
+      class="shape circle"
+      style="top: 20%; left: 10%; animation-delay: 0s"
+    ></div>
+    <div
+      class="shape triangle"
+      style="top: 60%; left: 80%; animation-delay: 2s"
+    ></div>
+    <div
+      class="shape square"
+      style="top: 30%; left: 50%; animation-delay: 4s"
+    ></div>
+    <div
+      class="shape blob"
+      style="top: 70%; left: 30%; animation-delay: 1s"
+    ></div>
+    <div
+      class="shape circle"
+      style="top: 40%; left: 85%; animation-delay: 3s"
+    ></div>
+    <div
+      class="shape triangle"
+      style="top: 80%; left: 20%; animation-delay: 5s"
+    ></div>
+  </div>
+
+  <div
+    class="container d-flex align-items-center justify-content-center text-center h-100"
+    appAnimateOnScroll
+    animationDelay="300"
+    animationClass="animate__fadeIn"
+  >
+    <div class="main-header">
+      <h3>
+        {{ "HomeTitle" | translate }}
+      </h3>
+      <p class="mt-5 home-desc">{{ "HomeDesc" | translate }}</p>
+      <a
+        class="mt-5 d-inline-block use-now--btn pointer animate__animated animate__wobble"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        {{ "UseNow" | translate }}
+        <i
+          class="fa-solid fa-arrow-{{
+            currentLanguage == 'ar' ? 'left' : 'right'
+          }}-long me-1"
+        ></i>
+      </a>
+
+      <div class="stars-container mt-5">
+        <ul class="d-flex align-items-center justify-content-center gap-2">
+          <li>
+            <i class="fa-solid fa-star"></i>
+          </li>
+          <li>
+            <i class="fa-solid fa-star"></i>
+          </li>
+          <li>
+            <i class="fa-solid fa-star"></i>
+          </li>
+          <li>
+            <i class="fa-solid fa-star"></i>
+          </li>
+          <li>
+            <i class="fa-solid fa-star"></i>
+          </li>
+        </ul>
+
+        <p>
+          {{ "ClientsNumber" | translate }}
+        </p>
+      </div>
+
+      <div class="zatka-container d-flex align-items-end justify-content-start">
+        <div
+          class="zatka-logo d-flex justify-content-start align-items-center gap-4"
+        >
+          <div class="d-flex flex-column align-items-start gap-2">
+            <img src="imgs/icons/fatora.svg" width="42" alt="fatora-icon" />
+            <img
+              src="imgs/icons/fatora-text.svg"
+              width="48"
+              alt=" fatora-text"
+            />
+          </div>
+          <p>{{ "FatooraText" | translate }}</p>
+        </div>
+
+        <div
+          class="zatka-logo d-flex justify-content-start align-items-center gap-4"
+        >
+          <div class="d-flex align-items-center gap-3">
+            <img src="imgs/icons/zakat.svg" width="48" alt="" />
+            <div class="d-flex flex-column justify-content-start">
+              <!-- <small class="fs-6">{{ "ZATCAAr" | translate }}</small>
+              <small class="fs-6">{{ "ZATCAEn" | translate }}</small> -->
+              <img src="imgs/icons/zakat2.svg" alt="" />
+            </div>
+          </div>
+          <p>{{ "ZakatText" | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade slide-up-modal"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header justify-content-between align-items-center mb-3">
+        <div class="invisible"></div>
+
+        <h5 class="modal-title text-center flex-grow-1" id="exampleModalLabel">
+          {{ "TryExceedSystem" | translate }}
+        </h5>
+
+        <i
+          class="fa-solid fa-xmark pointer"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></i>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-body-logo text-center mb-3">
+          <img src="imgs/icons/logo-orange.svg" alt="Logo" />
+        </div>
+
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">{{
+              "name" | translate
+            }}</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="{{ 'EnterFullName' | translate }}"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">{{
+              "Email" | translate
+            }}</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="{{ 'EnterEmail' | translate }}"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="header-text form-label">{{
+              "Phone" | translate
+            }}</label>
+
+            <div class="position-relative">
+              <input
+                type="text"
+                class="form-control"
+                [class.pe-5]="currentLanguage !== 'ar'"
+                [class.ps-5]="currentLanguage === 'ar'"
+                id="phone"
+                placeholder="05xxxxxxxx"
+              />
+              <span
+                class="position-absolute top-50 translate-middle-y"
+                [class.start-0]="currentLanguage === 'ar'"
+                [class.end-0]="currentLanguage !== 'ar'"
+                [class.ms-2]="currentLanguage === 'ar'"
+                [class.me-2]="currentLanguage !== 'ar'"
+              >
+                <img
+                  src="/icons/flag-ar.png"
+                  alt="Saudi flag"
+                  width="20"
+                  class="rounded-1"
+                />
+              </span>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="row">
+              <div class="col-6">
+                <label for="Business name" class="form-label">{{
+                  "BusinessName" | translate
+                }}</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Business name"
+                  placeholder="{{ 'EnterBusinessName' | translate }}"
+                />
+              </div>
+              <div class="col-6">
+                <label for="Business activity" class="form-label">{{
+                  "BusinessActivity" | translate
+                }}</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="Business activity"
+                  placeholder="{{ 'EnterBusinessActivity' | translate }}"
+                />
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="row">
+              <div class="col-6">
+                <label for="Business size" class="form-label">{{
+                  "BusinessSize" | translate
+                }}</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Business size"
+                  placeholder="{{ 'EnterBusinessSize' | translate }}"
+                />
+              </div>
+              <div class="col-6">
+                <label for="role in the business" class="form-label">{{
+                  "role in the business" | translate
+                }}</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="role in the business"
+                  placeholder="{{ 'Enter role in the business' | translate }}"
+                />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="submit">
+        <button
+          type="button d-flex align-items-center justify-content-center gap-3"
+          class="btn btn-secondary w-100"
+          (click)="showUseNowModal = false"
+        >
+          <span>
+            {{ "Submit" | translate }}
+          </span>
+
+          <span>
+            <i
+              class="fa-solid fa-arrow-{{
+                currentLanguage == 'ar' ? 'left' : 'right'
+              }}-long me-1"
+            ></i>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <app-shared-modal
+  [title]="'UseNow' | translate"
+  [(showModal)]="showUseNowModal"
+  [slideFromBottom]="true"
+>
+  <div modal-body>
+    <p>Welcome to our application!</p>
+    <p>This modal should slide up from the bottom!</p>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        placeholder="Enter your email"
+      />
+    </div>
+  </div>
+
+  <div modal-footer>
+    <button
+      type="button"
+      class="btn btn-secondary"
+      (click)="showUseNowModal = false"
+    >
+      Close
+    </button>
+    <button type="button" class="btn btn-primary">Get Started</button>
+  </div>
+</app-shared-modal> -->

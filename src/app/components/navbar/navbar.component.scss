@@ -1,0 +1,113 @@
+@import '../../../styles/base/variables';
+
+
+// .navbar {
+//     background-color: $primary;
+// }
+
+.fixed-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    color: #fff;
+}
+
+.navbar-inner {
+    background: transparent !important;
+}
+
+.active {
+    background: #fff;
+    color: $textColor !important;
+    border-radius: 20px;
+    padding: 5px 20px !important;
+}
+
+.navbar-nav:last-child {
+    padding-inline-end: 2rem;
+}
+
+
+.separator {
+    width: 2px;
+    height: 2rem;
+    background: #fff;
+}
+
+.flag-icon {
+    width: 2rem;
+    object-fit: cover;
+}
+
+.btn-language {
+    text-decoration: none;
+    background: transparent;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    min-width: 6rem;
+    transition: all 0.3s ease;
+
+    &:hover,
+    &:focus {
+        background: transparent;
+        color: #fff;
+        border: 0;
+    }
+
+    &::after {
+        margin-left: 0.5rem;
+        // border-top-color: rgba(255, 255, 255, 0.7);
+        border: 0;
+    }
+
+    .language-text {
+        font-weight: 600;
+        font-size: 1.4rem;
+    }
+}
+
+// Dropdown menu
+// .dropdown-menu {
+//     background: rgba(0, 0, 0, 0.95);
+//     backdrop-filter: blur(15px);
+//     padding: 0.5rem;
+//     min-width: 16rem;
+
+//     .dropdown-item {
+//         color: rgba(255, 255, 255, 0.9);
+//         padding: 0.75rem 1rem;
+//         border-radius: 0.5rem;
+//         transition: all 0.3s ease;
+
+//         &:hover,
+//         &:focus {
+//             background: rgba(255, 255, 255, 0.15);
+//             color: white;
+//         }
+
+//         .language-name {
+//             font-weight: 600;
+//             font-size: 1.4rem;
+//         }
+
+//         .text-muted {
+//             color: rgba(255, 255, 255, 0.6) !important;
+//             font-size: 1.2rem;
+//         }
+
+//         .bi-check2 {
+//             color: #007bff;
+//             font-weight: bold;
+//         }
+//     }
+
+//     .dropdown-divider {
+//         border-color: rgba(255, 255, 255, 0.2);
+//         margin: 0.5rem 0;
+//     }
+// }

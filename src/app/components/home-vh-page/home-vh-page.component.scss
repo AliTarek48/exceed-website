@@ -1,0 +1,313 @@
+@import '../../../styles/base/variables';
+
+.main-container {
+    width: 100%;
+    height: 100vh;
+    background: url('/imgs/banner.svg');
+    // background: #110029;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+}
+
+
+.animated-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.shape {
+    position: absolute;
+    opacity: 0.15;
+    /* Subtle transparency */
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+    /* Different animations for variety */
+    &:nth-child(odd) {
+        animation-name: float-up-down;
+    }
+
+    &:nth-child(even) {
+        animation-name: float-left-right;
+    }
+}
+
+.circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #667eea 0%, #764ba2 100%);
+    filter: blur(1px);
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-bottom: 120px solid #f093fb;
+    filter: blur(1px);
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+    transform: rotate(45deg);
+    filter: blur(1px);
+}
+
+.blob {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(45deg, #43e97b 0%, #38f9d7 100%);
+    border-radius: 50% 30% 70% 40% / 60% 40% 70% 30%;
+    filter: blur(1px);
+}
+
+/* Animation keyframes */
+@keyframes float-up-down {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-30px) rotate(90deg);
+    }
+
+    50% {
+        transform: translateY(30px) rotate(180deg);
+    }
+
+    75% {
+        transform: translateY(-15px) rotate(270deg);
+    }
+}
+
+@keyframes float-left-right {
+
+    0%,
+    100% {
+        transform: translateX(0) scale(1);
+    }
+
+    25% {
+        transform: translateX(40px) scale(1.1);
+    }
+
+    50% {
+        transform: translateX(-40px) scale(0.9);
+    }
+
+    75% {
+        transform: translateX(20px) scale(1.05);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .shape {
+        animation: none !important;
+    }
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+.main-header {
+    h3 {
+        font-size: 3.8rem;
+    }
+
+    p.home-desc {
+        line-height: 2.4;
+        width: 70%;
+        margin: auto;
+    }
+}
+
+.main-header .use-now--btn {
+    background-color: #fff;
+    text-decoration: none;
+    color: $textColor;
+    padding: 8px 30px;
+    border-radius: 20px;
+}
+
+.use-now--btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.use-now--btn i {
+    transition: transform 0.3s ease;
+}
+
+.use-now--btn i {
+    animation-duration: 0.6s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.use-now--btn i {
+    animation-name: slideLeft;
+}
+
+.use-now--btn i {
+    animation-name: slideRight;
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-5px);
+    }
+}
+
+.animate__animated.animate__fadeIn {
+    --animate-duration: 2s;
+}
+
+
+.stars-container {
+    ul {
+        li {
+            i {
+                color: $orange;
+            }
+        }
+    }
+}
+
+
+.zatka-container {
+    gap: 1.6rem;
+    margin-top: 4.2rem;
+
+    p {
+        margin: 0;
+    }
+}
+
+.zatka-logo {
+    height: 98.55px;
+    padding: 1.6rem;
+    border-radius: 1.6rem;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+
+
+
+// Custom slide-up animation for modal
+.slide-up-modal.modal.fade .modal-dialog {
+    transform: translateY(100%);
+    transition: transform 0.3s ease-out;
+}
+
+.slide-up-modal.modal.show .modal-dialog {
+    transform: translateY(0);
+}
+
+// Optional: Make modal appear from bottom
+.slide-up-modal .modal-dialog {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 45rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.slide-up-modal .modal-content {
+    padding: 1.8rem 1.8rem;
+    border-radius: 2.4rem;
+    border: none;
+    background: #F4F8FD;
+
+    box-shadow: 0 4px 40px 0 rgba(159, 189, 230, 0.16);
+}
+
+.modal-body {
+    font-family: "El Messiri", sans-serif !important;
+    background-color: #fff;
+    padding: 2.4rem 1.6rem;
+    border-radius: 1.6rem;
+    box-shadow: 0 4px 40px 0 rgba(79, 109, 150, 0.24);
+
+    label {
+        font-size: 1.2rem;
+        color: $label;
+    }
+
+    input {
+        padding: 1rem;
+        border: 1px solid #E0E0E0;
+
+        &::placeholder {
+            color: $input;
+        }
+
+    }
+}
+
+.modal-header {
+    border: 0;
+
+    .modal-title {
+        color: $primary;
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+
+    .fa-xmark {
+        color: $primary;
+    }
+}
+
+.submit {
+    margin-top: 2.4rem;
+
+    button {
+        padding: 0.8rem 3.2rem;
+        border-radius: 1.2rem;
+        background: linear-gradient(90deg, #450099 16.63%, #311352 140.6%);
+        font-size: 1.4rem;
+
+        i {
+            padding-inline-start: 0.5rem;
+        }
+    }
+}
