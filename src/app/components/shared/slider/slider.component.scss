@@ -1,0 +1,199 @@
+@import '../../../../styles/base/variables';
+
+.carousel-container {
+    position: relative;
+    margin-top: spacer(12);
+
+    ::ng-deep .owl-nav {
+        display: flex !important;
+        justify-content: center;
+        margin-top: 6rem;
+
+        .owl-prev,
+        .owl-next {
+            position: absolute;
+            top: 100%;
+            transform: translateY(-50%);
+            background: transparent !important;
+            color: $textColor !important;
+            border: 1px solid $textColor !important;
+            border-radius: 50%;
+            width: 4.8rem;
+            height: 4.8rem;
+            padding: 1rem;
+            border-radius: 50%;
+            font-size: 12px !important;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+                background: $textColor !important;
+                color: #fff !important;
+            }
+
+            &.disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+        }
+
+        .owl-prev {
+
+            margin-inline-end: 12rem;
+        }
+
+
+
+    }
+
+    ::ng-deep .owl-stage {
+        display: flex;
+        align-items: center;
+    }
+
+    ::ng-deep .owl-item {
+        display: flex;
+        justify-content: center;
+        transition: all 0.3s ease;
+
+        >div {
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        &:not(.center) {
+            opacity: 0.1;
+            filter: grayscale(0.3);
+
+            .slider-content {
+                transform: scale(0.9);
+            }
+        }
+
+        &.center {
+            opacity: 1;
+            z-index: 2;
+
+            .slider-content {
+                transform: scale(1.04);
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            }
+        }
+
+        &.center+.owl-item,
+        &:has(+ .center) {
+            opacity: 0.4;
+        }
+    }
+}
+
+.slider {
+    width: 100%;
+    padding: 1rem 0;
+    // margin-top: space;
+    // padding: 0 10px;
+
+    &-content {
+        width: 100%;
+        max-width: 516.667px;
+        height: 430px;
+        padding: 4.1rem 4rem;
+        border-radius: 1.6rem;
+        border: 1px solid #E0E0E0;
+        background: #FFF;
+        margin: 0 auto;
+        overflow: hidden;
+        transition: all 0.3s ease;
+
+        i.fa-star {
+            color: $orange;
+        }
+
+        &-text {
+            font-size: 1.8rem;
+            color: $sliderTextColor;
+            font-weight: 500;
+            line-height: 2;
+            margin: 1.5rem 0;
+        }
+
+        &-footer {
+            margin-top: 2rem;
+
+            &-company {
+                display: flex;
+                flex-direction: column;
+                // align-items: center;
+
+                span {
+                    font-size: 1.6rem;
+                    font-weight: 400;
+                    color: $header;
+                    letter-spacing: -0.08px;
+                }
+
+
+            }
+
+            &-ceo {
+                margin-left: -4rem;
+                position: relative;
+                z-index: 1;
+
+                img {
+                    object-fit: cover;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-85%, -50%) rotate(29deg);
+                    width: 600px;
+                    height: 200px;
+                    background: linear-gradient(45deg, #E4A8F6, #F8CCBF);
+                    z-index: -1;
+                    box-shadow:
+                        0 0 20px 15px rgba(229, 169, 247, 0.3),
+                        0 0 40px 30px rgba(248, 200, 184, 0.25),
+                        0 0 60px 45px rgba(255, 182, 193, 0.2),
+                        0 0 80px 60px rgba(255, 255, 255, 0.15);
+
+                    filter: blur(8px);
+                    opacity: 0.8;
+                }
+
+
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .slider {
+        &-content {
+            height: 380px;
+            padding: 2rem 1.5rem;
+
+            &-text {
+                font-size: 1.6rem;
+                line-height: 1.6;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .slider {
+        &-content {
+            height: 350px;
+            padding: 1.5rem 1rem;
+
+            &-text {
+                font-size: 1.4rem;
+            }
+        }
+    }
+}

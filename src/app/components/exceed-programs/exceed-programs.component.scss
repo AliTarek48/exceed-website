@@ -93,12 +93,11 @@ p {
             justify-content: center;
             align-items: center;
             gap: 1.6rem;
-            margin-bottom: 2rem; // Added consistent margin
+            margin-bottom: 2rem;
         }
 
         &-img {
 
-            // Ensure images are properly sized
             img {
                 max-width: 100%;
                 height: auto;
@@ -106,7 +105,6 @@ p {
         }
     }
 
-    // Responsive adjustments
     @media (max-width: 991px) {
         .programs .row>div {
             margin-bottom: 2.4rem;
@@ -117,17 +115,17 @@ p {
         }
 
         .program {
-            padding: 2.4rem; // Adjusted padding for mobile
+            padding: 2.4rem;
         }
     }
 
     @media (max-width: 767px) {
         p.exceed-programs-text {
-            width: 90%; // Better mobile width
+            width: 90%;
         }
 
         .program {
-            height: auto; // Allow height to adjust on mobile
+            height: auto;
             min-height: 280px;
         }
     }

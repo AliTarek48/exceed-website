@@ -1,0 +1,11 @@
+@import '../../../styles/base/variables';
+
+.customer-reviews {
+    &-header {
+        .sub-title {
+            font-size: 1.8rem;
+            color: $textColor;
+            font-weight: 300;
+        }
+    }
+}

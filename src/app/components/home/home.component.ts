@@ -8,6 +8,7 @@ import { ExceedDesktopComponent } from '../exceed-desktop/exceed-desktop.compone
 import { ExceedProgramsComponent } from '../exceed-programs/exceed-programs.component';
 import { ExceedSolutionsComponent } from '../exceed-solutions/exceed-solutions.component';
 import { PricesPlanesComponent } from '../prices-planes/prices-planes.component';
+import { CustomerReviewsComponent } from '../customer-reviews/customer-reviews.component';
 
 @Component({
   selector: 'app-home',
@@ -22,6 +23,7 @@ import { PricesPlanesComponent } from '../prices-planes/prices-planes.component'
     ExceedProgramsComponent,
     ExceedSolutionsComponent,
     PricesPlanesComponent,
+    CustomerReviewsComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',

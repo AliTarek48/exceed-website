@@ -8,6 +8,7 @@ $input: #B5B5B5;
 $backColor: #F4F8FD;
 $mainCardColor: #E4E7FF;
 $cardBorderColor: #E2E7F3;
+$sliderTextColor: #1A2D47;
 // Spacing scale based on REM (1rem = 10px)
 $spacing-unit: 1rem; // 10px
 $spacers: (
@@ -36,8 +37,12 @@ $spacers: (
     // 80px
     24: $spacing-unit * 9.6,
     // 96px
-    32: $spacing-unit * 12.8 // 128px
+    32: $spacing-unit * 12.8
 );
+
+@function spacer($key) {
+    @return map-get($spacers, $key);
+}
 
 // Container max widths in REM
 $container-max-widths: (
