@@ -42,12 +42,14 @@
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
       >
-        {{ "UseNow" | translate }}
-        <i
-          class="fa-solid fa-arrow-{{
-            currentLanguage == 'ar' ? 'left' : 'right'
-          }}-long me-1"
-        ></i>
+        <span class="d-flex align-items-center gap-3">
+          {{ "UseNow" | translate }}
+          <i
+            class="fa-solid fa-arrow-{{
+              currentLanguage == 'ar' ? 'left' : 'right'
+            }}-long me-1"
+          ></i>
+        </span>
       </a>
 
       <div class="stars-container mt-5">
@@ -74,7 +76,9 @@
         </p>
       </div>
 
-      <div class="zatka-container d-flex align-items-end justify-content-start">
+      <div
+        class="zatka-container d-flex align-items-end justify-content-center"
+      >
         <div
           class="zatka-logo d-flex justify-content-start align-items-center gap-4"
         >

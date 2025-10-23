@@ -1,10 +1,5 @@
 @import '../../../styles/base/variables';
 
-
-// .navbar {
-//     background-color: $primary;
-// }
-
 .fixed-top {
     position: absolute;
     top: 0;
@@ -14,6 +9,7 @@
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
+    font-size: 1.6rem;
     color: #fff;
 }
 

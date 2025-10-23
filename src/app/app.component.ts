@@ -58,7 +58,7 @@ export class AppComponent implements OnInit {
     // Handle route changes
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe(() => {
+      .subscribe((event) => {
         this.updateLanguageFromUrl();
       });
 

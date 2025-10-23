@@ -133,6 +133,7 @@
     }
 
     p.home-desc {
+        font-size: 1.6rem;
         line-height: 2.4;
         width: 70%;
         margin: auto;
@@ -140,6 +141,7 @@
 }
 
 .main-header .use-now--btn {
+    font-size: 1.4rem;
     background-color: #fff;
     text-decoration: none;
     color: $textColor;
@@ -201,6 +203,8 @@
 
 
 .stars-container {
+    margin-top: 4rem;
+
     ul {
         li {
             i {
@@ -208,12 +212,17 @@
             }
         }
     }
+
+    p {
+        font-size: 1.4rem;
+        opacity: 0.64;
+    }
 }
 
 
 .zatka-container {
     gap: 1.6rem;
-    margin-top: 4.2rem;
+    margin-top: 4rem;
 
     p {
         margin: 0;

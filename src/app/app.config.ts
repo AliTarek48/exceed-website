@@ -3,7 +3,7 @@ import {
   importProvidersFrom,
   provideZoneChangeDetection,
 } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withInMemoryScrolling } from '@angular/router';
 
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -15,7 +15,13 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter([]),
+    provideRouter(
+      [],
+      withInMemoryScrolling({
+        scrollPositionRestoration: 'top',
+        anchorScrolling: 'enabled',
+      })
+    ),
     provideClientHydration(),
     provideHttpClient(withFetch()),
     provideTranslateService({
