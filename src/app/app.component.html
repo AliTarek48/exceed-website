@@ -18,4 +18,15 @@
   </main>
 
   <app-footer />
+
+  <button
+    class="scroll-top"
+    [class.show]="showScrollTop"
+    (click)="scrollToTop()"
+    aria-label="Scroll to top"
+    title="Scroll to top"
+    type="button"
+  >
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
 </div>

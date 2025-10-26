@@ -1,0 +1,68 @@
+@import '../../../../styles/base/variables';
+
+
+.what-is-container {
+    margin-top: 8rem;
+}
+
+.what-is-container {
+    position: relative;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    background-color: $textColor;
+
+    .exceed-desktop {
+        padding: 8rem 0 5.2rem 0;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/imgs/Clip path group.svg');
+            background-repeat: no-repeat;
+            background-position: top;
+            filter: brightness(0) saturate(100%) invert(60%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%);
+            opacity: 0.2;
+            z-index: -1;
+        }
+    }
+}
+
+
+
+
+.exceed-desktop-content {
+    color: #fff;
+    padding-inline-start: 6rem;
+
+    h3 {
+        font-size: 3.2rem;
+    }
+
+    p {
+        padding-top: 2.4rem;
+        font-size: 1.6rem;
+        line-height: 2;
+        font-weight: 300;
+    }
+}
+
+
+.second-container {
+    padding: 8rem 0 5.2rem 0;
+
+    p {
+        color: $header;
+        text-align: justify;
+        line-height: 2;
+        font-size: 1.8rem;
+    }
+
+    &:last-child {
+        background-color: $lightBg;
+    }
+}

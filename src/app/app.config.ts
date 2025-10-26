@@ -26,7 +26,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withFetch()),
     provideTranslateService({
       loader: provideTranslateHttpLoader({
-        prefix: 'i18n/', // relative to public folder
+        prefix: 'i18n/',
         suffix: '.json',
       }),
       fallbackLang: 'ar',

@@ -1,4 +1,11 @@
-import { Component, inject, OnInit } from '@angular/core';
+import {
+  Component,
+  inject,
+  OnInit,
+  HostListener,
+  Inject,
+  PLATFORM_ID,
+} from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import {
   TranslateModule,
@@ -13,7 +20,8 @@ import { filter } from 'rxjs/operators';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { EnhancedLoadingService } from './services/loading.service';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, isPlatformBrowser } from '@angular/common';
+import { NavbarService } from './services/navbar.service';
 
 @Component({
   selector: 'app-root',
@@ -34,14 +42,26 @@ export class AppComponent implements OnInit {
   private router = inject(Router);
   private languageService = inject(LanguageService);
   private routeLocalizationService = inject(RouteLocalizationService);
+  private platformId = inject(PLATFORM_ID);
 
+  // Services
+  loadingService = inject(EnhancedLoadingService);
+  private navbarService = inject(NavbarService);
+
+  // Component state
   isRTL = true;
   currentLanguage = 'ar';
   supportedLanguages = this.languageService.getSupportedLanguages();
-  loadingService = inject(EnhancedLoadingService);
   isLoading$ = this.loadingService.loading$;
+
+  // Scroll to top functionality
+  showScrollTop = false;
+  private scrollThreshold = 300;
+  private isBrowser = isPlatformBrowser(this.platformId);
+
   ngOnInit() {
     this.loadingService.initialize();
+
     // Initialize routes
     const localizedRoutes =
       this.routeLocalizationService.localizeRoutes(routes);
@@ -60,9 +80,49 @@ export class AppComponent implements OnInit {
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event) => {
         this.updateLanguageFromUrl();
+        this.updateNavbarBackground();
       });
 
     this.updateLanguageFromUrl();
+
+    // Initialize scroll position check (browser only)
+    if (this.isBrowser) {
+      this.checkScrollPosition();
+    }
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    if (this.isBrowser) {
+      this.checkScrollPosition();
+    }
+  }
+
+  private checkScrollPosition() {
+    if (!this.isBrowser) return;
+
+    const scrollPosition =
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop ||
+      0;
+    this.showScrollTop = scrollPosition > this.scrollThreshold;
+  }
+
+  scrollToTop() {
+    if (!this.isBrowser) return;
+
+    // Smooth scroll with fallback
+    if ('scrollBehavior' in document.documentElement.style) {
+      window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth',
+      });
+    } else {
+      // Fallback for older browsers
+      window.scrollTo(0, 0);
+    }
   }
 
   private updateLanguageFromUrl(): void {
@@ -74,21 +134,15 @@ export class AppComponent implements OnInit {
     }
   }
 
-  // switchLanguage(langCode: string): void {
-  //   if (langCode !== this.currentLanguage) {
-  //     const currentPath =
-  //       this.routeLocalizationService.getCurrentPathWithoutLanguage(
-  //         this.router.url
-  //       );
-  //     const newPath = this.routeLocalizationService.getLocalizedPath(
-  //       currentPath,
-  //       langCode
-  //     );
-  //     this.router.navigateByUrl(newPath);
-  //   }
-  // }
+  private updateNavbarBackground(): void {
+    let route = this.router.routerState.root;
 
-  // getLocalizedPath(path: string): string {
-  //   return this.routeLocalizationService.getLocalizedPath(path);
-  // }
+    // Traverse through all child routes to find the data
+    while (route.firstChild) {
+      route = route.firstChild;
+    }
+
+    const hasBackground = route.snapshot.data['navbarBackground'] || false;
+    this.navbarService.setBackground(hasBackground);
+  }
 }

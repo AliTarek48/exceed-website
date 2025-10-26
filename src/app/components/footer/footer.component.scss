@@ -149,6 +149,12 @@
             font-size: 1.2rem;
             font-weight: 400;
         }
+
+        &:focus {
+            border-inline-end: 0;
+            box-shadow: none;
+
+        }
     }
 
     input.form-check-input {

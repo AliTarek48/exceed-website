@@ -1,9 +1,10 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { TranslateModule, TranslatePipe } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { LanguageService } from '../../services/language.service';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { RouteLocalizationService } from '../../services/route-localization.service';
 import { filter } from 'rxjs';
+import { NavbarService } from '../../services/navbar.service';
 
 @Component({
   selector: 'app-navbar',
@@ -16,6 +17,7 @@ export class NavbarComponent implements OnInit {
   languageService = inject(LanguageService);
   private router = inject(Router);
   private routeLocalizationService = inject(RouteLocalizationService);
+  readonly navbarService = inject(NavbarService);
   activeRoute: string = '';
 
   currentLanguage = 'ar';

@@ -1,0 +1,50 @@
+@import '../../../../styles/base/variables';
+
+.about-header {
+    padding-top: 8rem;
+
+    &-title {
+
+        p.welcome-text,
+        .exceed-logo {
+            margin-bottom: spacer(6);
+        }
+
+        span {
+            display: inline-block;
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: $textColor;
+        }
+
+        span:last-child {
+            color: $orange;
+        }
+
+        h3 {
+            font-size: 4.8rem;
+            color: $grayColor;
+        }
+    }
+
+    .about-header-bg {
+        margin-top: 5.6rem;
+
+        img {
+            object-fit: contain;
+
+        }
+    }
+
+    .about-main-text {
+        margin-top: 5.6rem;
+
+        p {
+            font-size: 1.8rem;
+            font-weight: 400;
+            line-height: 2;
+            color: $header ;
+            text-align: justify;
+        }
+    }
+}

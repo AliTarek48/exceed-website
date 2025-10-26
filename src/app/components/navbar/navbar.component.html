@@ -1,6 +1,10 @@
-<nav class="navbar navbar-expand-lg fixed-top pt-5">
+<nav
+  class="navbar navbar-expand-lg fixed-top py-4"
+  [class.navbar-with-bg]="navbarService.hasBackground()"
+  [class.navbar-default]="!navbarService.hasBackground()"
+>
   <div class="container-fluid py-2">
-    <a class="navbar-brand d-flex flex-column gap-1" href="#">
+    <a class="navbar-brand d-flex align-items-center" href="#">
       <img src="/imgs/icons/logo.svg" alt="Exceed Logo" />
     </a>
 
@@ -34,7 +38,11 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="getLocalizedPath('about')">
+          <a
+            class="nav-link"
+            [class.active]="isActive('work-fields')"
+            [routerLink]="getLocalizedPath('work-fields')"
+          >
             {{ "Work Fields" | translate }}
           </a>
         </li>

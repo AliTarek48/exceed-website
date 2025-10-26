@@ -1,5 +1,5 @@
+// app.routes.ts
 import { Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
 
 export const routes: Routes = [
   {
@@ -11,7 +11,10 @@ export const routes: Routes = [
     path: 'home',
     loadComponent: () =>
       import('./components/home/home.component').then((c) => c.HomeComponent),
-    data: { title: 'Home' },
+    data: {
+      title: 'Home',
+      navbarBackground: false,
+    },
   },
   {
     path: 'about',
@@ -19,6 +22,21 @@ export const routes: Routes = [
       import('./components/about-us/about-us.component').then(
         (c) => c.AboutUsComponent
       ),
-    data: { title: 'About' },
+    data: {
+      title: 'About',
+      navbarBackground: true,
+    },
+  },
+
+  {
+    path: 'work-fields',
+    loadComponent: () =>
+      import('./components/work-fields/work-fields.component').then(
+        (c) => c.WorkFieldsComponent
+      ),
+    data: {
+      title: 'WorkFields',
+      navbarBackground: true,
+    },
   },
 ];
