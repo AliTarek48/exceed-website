@@ -1,5 +1,5 @@
 <div class="main-container">
-  <div class="animated-shapes">
+  <!-- <div class="animated-shapes">
     <div
       class="shape circle"
       style="top: 20%; left: 10%; animation-delay: 0s"
@@ -24,16 +24,17 @@
       class="shape triangle"
       style="top: 80%; left: 20%; animation-delay: 5s"
     ></div>
-  </div>
+  </div> -->
 
   <div
-    class="container d-flex align-items-center justify-content-center text-center h-100"
-    appAnimateOnScroll
-    animationDelay="300"
-    animationClass="animate__fadeIn"
+    class="container-fluid d-flex flex-column align-items-center justify-content-end text-center h-100"
   >
     <div class="main-header">
-      <h3>
+      <h3
+        appAnimateOnScroll
+        animationDelay="300"
+        animationClass="animate__fadeIn"
+      >
         {{ "HomeTitle" | translate }}
       </h3>
       <p class="mt-5 home-desc">{{ "HomeDesc" | translate }}</p>
@@ -51,6 +52,24 @@
           ></i>
         </span>
       </a>
+
+      <!-- <div class="full-width-carousel-wrapper">
+        <div class="carousel-container" dir="rtl">
+          <owl-carousel-o [options]="customOptions">
+            <ng-template carouselSlide>
+              <div class="slide-item">
+                <img src="/imgs/Component 1.png" class="w-100" alt="" />
+              </div>
+            </ng-template>
+          </owl-carousel-o>
+        </div>
+      </div> -->
+
+      <div>
+        <img src="/imgs/Component 1.png" class="w-100" alt="" />
+      </div>
+
+      <!-- <app-home-carousel /> -->
 
       <div class="stars-container mt-5">
         <ul class="d-flex align-items-center justify-content-center gap-2">

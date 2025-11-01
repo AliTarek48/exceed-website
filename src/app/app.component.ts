@@ -3,15 +3,9 @@ import {
   inject,
   OnInit,
   HostListener,
-  Inject,
   PLATFORM_ID,
 } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
-import {
-  TranslateModule,
-  TranslatePipe,
-  TranslateService,
-} from '@ngx-translate/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { LanguageService } from './services/language.service';
 import { RouteLocalizationService } from './services/route-localization.service';

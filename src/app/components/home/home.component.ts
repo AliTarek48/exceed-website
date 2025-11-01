@@ -9,6 +9,7 @@ import { ExceedProgramsComponent } from '../exceed-programs/exceed-programs.comp
 import { ExceedSolutionsComponent } from '../exceed-solutions/exceed-solutions.component';
 import { PricesPlanesComponent } from '../prices-planes/prices-planes.component';
 import { CustomerReviewsComponent } from '../customer-reviews/customer-reviews.component';
+import { QuestionsComponent } from '../contact-us/components/questions/questions.component';
 
 @Component({
   selector: 'app-home',
@@ -24,6 +25,7 @@ import { CustomerReviewsComponent } from '../customer-reviews/customer-reviews.c
     ExceedSolutionsComponent,
     PricesPlanesComponent,
     CustomerReviewsComponent,
+    QuestionsComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',

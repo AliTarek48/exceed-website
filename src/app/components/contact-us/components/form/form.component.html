@@ -1,0 +1,180 @@
+<div class="form-container">
+  <div class="container">
+    <h3 class="form-header text-center">
+      <span>
+        {{ "technical support with Exceed" | translate }}
+      </span>
+
+      <span class="exceed-text">
+        {{ "Exceed" | translate }}
+      </span>
+    </h3>
+
+    <p class="text-center">
+      {{ "If you have any inquiry" | translate }}
+    </p>
+
+    <div class="form-content">
+      <h4 class="text-center">
+        {{ "Ready to grow your business" | translate }}
+      </h4>
+
+      <div class="row">
+        <div class="col-lg-7">
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">{{
+                "name" | translate
+              }}</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                placeholder="{{ 'EnterFullName' | translate }}"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">{{
+                "Email" | translate
+              }}</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="{{ 'EnterEmail' | translate }}"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label class="header-text form-label">{{
+                "Phone" | translate
+              }}</label>
+
+              <div class="position-relative">
+                <input
+                  type="text"
+                  class="form-control"
+                  [class.pe-5]="currentLanguage !== 'ar'"
+                  [class.ps-5]="currentLanguage === 'ar'"
+                  id="phone"
+                  placeholder="05xxxxxxxx"
+                />
+                <span
+                  class="position-absolute top-50 translate-middle-y"
+                  [class.start-0]="currentLanguage === 'ar'"
+                  [class.end-0]="currentLanguage !== 'ar'"
+                  [class.ms-2]="currentLanguage === 'ar'"
+                  [class.me-2]="currentLanguage !== 'ar'"
+                >
+                  <img
+                    src="/icons/flag-ar.png"
+                    alt="Saudi flag"
+                    width="20"
+                    class="rounded-1"
+                  />
+                </span>
+              </div>
+            </div>
+
+            <div>
+              <label for="email" class="form-label">{{
+                "Message" | translate
+              }}</label>
+              <textarea
+                class="form-control"
+                placeholder="{{ 'EnterYourMessage' | translate }}"
+                cols="6"
+                rows="6"
+              ></textarea>
+            </div>
+
+            <div class="submit">
+              <button
+                type="button d-flex align-items-center justify-content-center gap-3"
+                class="btn btn-secondary w-100"
+              >
+                <span>
+                  {{ "Send" | translate }}
+                </span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-lg-5 d-flex flex-column justify-content-between">
+          <div class="d-flex flex-column gap-4">
+            <div class="form-details">
+              <div class="form-details-item d-flex flex-column">
+                <p class="m-0 d-flex align-items-center gap-3">
+                  <span>
+                    <img src="/imgs/icons/sms.svg" alt="sms" />
+                  </span>
+                  <span>{{ "Email" | translate }}</span>
+                </p>
+
+                <p class="m-0">info&#64;atheebsoft.com.com</p>
+              </div>
+            </div>
+
+            <div class="form-details">
+              <div class="form-details-item d-flex flex-column">
+                <p class="m-0 d-flex align-items-center gap-3">
+                  <span>
+                    <img src="/imgs/icons/mobile.svg" alt="sms" />
+                  </span>
+                  <span>{{ "Mobile" | translate }}</span>
+                </p>
+
+                <p class="m-0" dir="ltr">+966 599 706 569</p>
+              </div>
+            </div>
+
+            <div class="form-details">
+              <div class="form-details-item d-flex flex-column">
+                <p class="m-0 d-flex align-items-center gap-3">
+                  <span>
+                    <img src="/imgs/icons/location.svg" alt="sms" />
+                  </span>
+                  <span>{{ "Location" | translate }}</span>
+                </p>
+
+                <p class="m-0">{{ "LocationDetails" | translate }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-links-container">
+            <p>{{ "Stay in touch with us" | translate }}</p>
+            <ul class="social-list d-flex align-items-center gap-4">
+              <li>
+                <a href="#"> <i class="fa-brands fa-tiktok"></i></a>
+              </li>
+
+              <li>
+                <a href="#"> <i class="fa-brands fa-x-twitter"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-snapchat"></i></a>
+              </li>
+
+              <li>
+                <a href="#"> <i class="fa-brands fa-linkedin-in"></i> </a>
+              </li>
+
+              <li>
+                <a href="#"> <i class="fa-brands fa-instagram"></i> </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

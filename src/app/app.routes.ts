@@ -39,4 +39,37 @@ export const routes: Routes = [
       navbarBackground: true,
     },
   },
+  {
+    path: 'contact-us',
+    loadComponent: () =>
+      import('./components/contact-us/contact-us.component').then(
+        (c) => c.ContactUsComponent
+      ),
+    data: {
+      title: 'ContactUs',
+      navbarBackground: true,
+    },
+  },
+  {
+    path: 'programs',
+    loadComponent: () =>
+      import('./components/programs/programs.component').then(
+        (c) => c.ProgramsComponent
+      ),
+    data: {
+      title: 'Programs',
+      navbarBackground: true,
+    },
+  },
+  {
+    path: 'packages',
+    loadComponent: () =>
+      import('./components/packages/packages.component').then(
+        (c) => c.PackagesComponent
+      ),
+    data: {
+      title: 'Packages',
+      navbarBackground: true,
+    },
+  },
 ];

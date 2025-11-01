@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { LanguageService } from '../../services/language.service';
 import { AnimateOnScrollDirective } from '../../directives/animate.directive';
+import { HomeCarouselComponent } from './home-carousel/home-carousel.component';
 
 @Component({
   selector: 'app-home-vh-page',

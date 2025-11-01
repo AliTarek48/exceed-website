@@ -1,11 +1,12 @@
 <nav
-  class="navbar navbar-expand-lg fixed-top py-4"
+  #navElement
+  class="navbar navbar-expand-lg fixed-top py-2"
   [class.navbar-with-bg]="navbarService.hasBackground()"
   [class.navbar-default]="!navbarService.hasBackground()"
 >
   <div class="container-fluid py-2">
     <a class="navbar-brand d-flex align-items-center" href="#">
-      <img src="/imgs/icons/logo.svg" alt="Exceed Logo" />
+      <img src="/imgs/icons/brandmark-design.svg" alt="Exceed Logo" />
     </a>
 
     <button
@@ -18,50 +19,64 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mx-auto gap-5">
-        <li class="nav-item">
-          <a
-            class="nav-link active"
-            [routerLink]="getLocalizedPath('home')"
-            [class.active]="isActive('home')"
-          >
-            {{ "Home" | translate }}
-          </a>
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            [routerLink]="getLocalizedPath('about')"
-            [class.active]="isActive('about')"
-          >
-            {{ "About Exceed" | translate }}
-          </a>
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            [class.active]="isActive('work-fields')"
-            [routerLink]="getLocalizedPath('work-fields')"
-          >
-            {{ "Work Fields" | translate }}
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="getLocalizedPath('about')">
-            {{ "Packages" | translate }}
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="getLocalizedPath('about')">
-            {{ "Contact Us" | translate }}
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="getLocalizedPath('about')">
-            {{ "Exceed programs" | translate }}
-          </a>
-        </li>
-      </ul>
+      <div class="nav-border-wrapper">
+        <ul class="navbar-nav mx-auto gap-5">
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              [routerLink]="getLocalizedPath('home')"
+              [class.active]="isActive('home')"
+            >
+              {{ "Home" | translate }}
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              [routerLink]="getLocalizedPath('about')"
+              [class.active]="isActive('about')"
+            >
+              {{ "About Exceed" | translate }}
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              [class.active]="isActive('work-fields')"
+              [routerLink]="getLocalizedPath('work-fields')"
+            >
+              {{ "Work Fields" | translate }}
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              [class.active]="isActive('packages')"
+              [routerLink]="getLocalizedPath('packages')"
+            >
+              {{ "Packages" | translate }}
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              [class.active]="isActive('contact-us')"
+              [routerLink]="getLocalizedPath('contact-us')"
+            >
+              {{ "Contact Us" | translate }}
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              [class.active]="isActive('programs')"
+              [routerLink]="getLocalizedPath('programs')"
+            >
+              {{ "Exceed programs" | translate }}
+            </a>
+          </li>
+        </ul>
+      </div>
 
       <div class="navbar-nav align-items-center">
         <button class="btn btn-outline-light min-w-130px raduis-20 h-40">
@@ -91,38 +106,6 @@
               {{ currentLanguage === "en" ? "Ar" : "En" }}
             </span>
           </a>
-          <!-- <ul class="dropdown-menu dropdown-menu-end">
-            <li>
-              <button
-                class="dropdown-item d-flex align-items-center gap-2"
-                (click)="switchLanguage('en')"
-              >
-                <img src="/icons/flag-en.png" alt="US Flag" class="flag-icon" />
-                <span>English</span>
-                @if (currentLanguage === 'en') {
-
-                <i class="bi bi-check2 ms-auto text-primary"></i>
-                }
-              </button>
-            </li>
-            <li>
-              <button
-                class="dropdown-item d-flex align-items-center gap-2"
-                (click)="switchLanguage('ar')"
-              >
-                <img
-                  src="/icons/flag-ar.png"
-                  alt="Saudi Flag"
-                  class="flag-icon"
-                />
-                <span>العربية</span>
-                @if (currentLanguage === 'ar') {
-
-                <i class="bi bi-check2 ms-auto text-primary"></i>
-                }
-              </button>
-            </li>
-          </ul> -->
         </div>
       </div>
     </div>

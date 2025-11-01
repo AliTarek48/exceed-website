@@ -1,0 +1,60 @@
+<div class="packages-home">
+  <div class="container">
+    <h2 class="text-center">
+      <span>
+        {{ "Choose the package that suits you with" | translate }}
+      </span>
+
+      <span class="exceed-text">{{ "Exceed" | translate }}</span>
+    </h2>
+
+    <p class="text-center">
+      {{ "Try the system free" | translate }}
+    </p>
+
+    <div class="package-type d-flex align-items-center">
+      <div class="packages-btns d-flex align-items-center">
+        <span
+          class="d-flex align-items-center pointer"
+          [class.active]="selectedPackage === 'annual'"
+          (click)="selectPackage('annual')"
+        >
+          <a href="javascript:void(0)">سنوي</a>
+        </span>
+        <span
+          class="d-flex align-items-center pointer"
+          [class.active]="selectedPackage === 'monthly'"
+          (click)="selectPackage('monthly')"
+        >
+          <a href="javascript:void(0)">شهري</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="packages mt-5">
+  <div class="container">
+    <div class="package">
+      <div class="overlay">
+        <img src="/imgs/packages/Vector 7.svg" alt="" />
+      </div>
+      <div class="package-header">
+        <img src="/imgs/packages/car.svg" alt="" />
+        <h4>المبسطة</h4>
+
+        <div class="package-price">
+          <div class="price d-flex align-items-center">
+            <span>500</span>
+            <span><img src="/imgs/icons/Riyal.svg" alt="Riyal" /></span>
+            <span>/ سنوياً</span>
+          </div>
+
+          <div class="details">
+            <p class="m-0">لكل مستخدم سنويا</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

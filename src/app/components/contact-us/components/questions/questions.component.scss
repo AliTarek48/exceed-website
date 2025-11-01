@@ -1,0 +1,117 @@
+@import '../../../../../styles/base/variables';
+
+:host ::ng-deep {
+    .questions {
+        margin-top: 5.6rem;
+
+        &-title {
+            margin-bottom: 4.8rem;
+
+            span {
+                color: $textColor;
+                font-size: 1.6rem;
+                font-weight: 300;
+            }
+
+            h3 {
+                font-size: 3.8rem;
+                color: $grayColor;
+                margin-top: 1.6rem;
+            }
+        }
+    }
+
+    .accordion-button {
+        background: $textColor;
+        color: #000;
+        border: 1px solid #E0E0E0;
+        border-top-left-radius: 1.6rem;
+        border-top-right-radius: 1.6rem;
+        padding: 1.6rem 3.2rem;
+        height: 8rem;
+
+        .expand-icon,
+        .collapse-icon {
+            width: 2.2rem;
+            height: 2.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+            color: #000;
+        }
+
+        .expand-icon {
+            background-color: #fff;
+        }
+
+        .collapse-icon {
+            border: 1px solid #000;
+        }
+
+        &:focus {
+            box-shadow: none;
+        }
+
+        &::after {
+            content: none;
+        }
+
+        // Hide collapse icon by default
+        .collapse-icon {
+            display: none;
+        }
+
+        // When collapsed, show plus icon and hide minus
+        &.collapsed {
+            background-color: #fff;
+            border-radius: 1.6rem;
+
+            .expand-icon {
+                display: none;
+            }
+
+            .collapse-icon {
+                display: flex;
+            }
+
+            .content {
+                p {
+                    color: $grayColor;
+
+                }
+            }
+        }
+
+        .content {
+            p {
+                color: #fff;
+                font-size: 1.6rem;
+                font-weight: 600;
+
+            }
+        }
+    }
+
+    .accordion-item {
+        border: 0;
+
+
+    }
+
+    .accordion-body {
+        // border: 1px solid #E0E0E0;
+        font-size: 1.6rem;
+        color: $grayColor;
+        border: 1.5px solid $grayColor;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+        padding: 1.25rem;
+
+        ul {
+            list-style: disc;
+            margin-inline-start: 1rem;
+        }
+    }
+}

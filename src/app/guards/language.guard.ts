@@ -11,7 +11,6 @@ export class LanguageGuard implements CanActivate {
   private router = inject(Router);
 
   canActivate(route: ActivatedRouteSnapshot): boolean {
-    debugger;
     // Get the language code from the first URL segment
     const urlSegments = route.url.map((segment) => segment.path);
     const langCode = urlSegments[0]; // First segment is the language code

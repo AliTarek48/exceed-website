@@ -1,0 +1,93 @@
+@import '../../../../../styles/base/variables';
+
+.mr-auto {
+    margin-inline-start: auto;
+}
+
+.customer-managment {
+    padding-top: 6.4rem;
+
+    h3 {
+        font-size: 3.2rem;
+        font-weight: 700;
+        color: $header;
+        margin-bottom: 4rem;
+    }
+
+    p {
+        font-size: 1.8rem;
+        font-weight: 400;
+        color: $header;
+        text-align: justify;
+        line-height: 2;
+
+    }
+}
+
+
+.store-managment {
+    padding: 8rem 0;
+    background-color: #E4F1FF;
+
+    h3 {
+        font-size: 3.2rem;
+        font-weight: 700;
+        color: $header;
+        margin-bottom: 4rem;
+    }
+
+    p {
+        font-size: 1.8rem;
+        font-weight: 400;
+        color: $header;
+        text-align: justify;
+        line-height: 2;
+
+    }
+}
+
+
+.purchasing-managment {
+    padding: 8rem 0;
+    background: #E4E7FF;
+
+    h3 {
+        font-size: 3.2rem;
+        font-weight: 700;
+        color: $header;
+        margin-bottom: 4rem;
+    }
+
+    p {
+        font-size: 1.8rem;
+        font-weight: 400;
+        color: $header;
+        text-align: justify;
+        line-height: 2;
+
+    }
+}
+
+
+.accounts-managment {
+    padding-top: 8rem;
+    margin-bottom: -4.8rem;
+    background: url('/imgs/programs/Vector 2.svg') bottom no-repeat;
+
+
+    h3 {
+        font-size: 3.2rem;
+        font-weight: 700;
+        color: $header;
+        margin-bottom: 4rem;
+    }
+
+    p {
+        font-size: 1.8rem;
+        font-weight: 400;
+        color: $header;
+        text-align: justify;
+        line-height: 2;
+
+    }
+}

@@ -16,7 +16,8 @@ import { isPlatformBrowser } from '@angular/common';
   standalone: true,
 })
 export class AnimateOnScrollDirective implements OnInit, OnDestroy {
-  @Input() animationClass: string = 'animate__fadeInUp';
+  // @Input() animationClass: string = 'animate__fadeInUp';
+  @Input() animationClass: string = 'animate__fadeIn';
   @Input() threshold: number = 0.2;
   @Input() rootMargin: string = '0px 0px -50px 0px';
   @Input() animationDelay: any = 0;

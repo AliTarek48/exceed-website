@@ -1,14 +1,32 @@
 @import '../../../styles/base/variables';
 
-.fixed-top.navbar-default {
+.nav-border-wrapper {
+    display: contents;
+}
+
+.navbar-nav.mx-auto {
+    background: #3B008F;
+    box-shadow: inset 0px 0px 4px rgba(255, 255, 255, 0.32);
+    border-radius: 999px;
+    padding: 8px;
+}
+
+
+.fixed-top:not(.scrolled).navbar-default {
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
     z-index: 1030;
+
+    .navbar-nav.mx-auto {
+        background: #1B0A33;
+        box-shadow: inset 0px 0px 4px rgba(255, 255, 255, 0.16);
+    }
 }
 
-.fixed-top.navbar-with-bg {
+.fixed-top.navbar-with-bg,
+.fixed-top.scrolled {
     background-color: $textColor;
     position: fixed;
     top: 0;
@@ -28,20 +46,39 @@
 
 
 .navbar-expand-lg .navbar-nav .nav-link {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: #fff;
+    font-weight: 300;
 }
 
 .navbar-inner {
     background: transparent !important;
 }
 
+
+
+
 .active {
     background: #fff;
     color: $textColor !important;
     border-radius: 20px;
     padding: 5px 20px !important;
+    /****/
+    // background: rgba(255, 255, 255, 0.16);
+    // border-radius: 999px;
+    // padding: 5px 20px !important;
 }
+
+
+.fixed-top:not(.scrolled).navbar-default {
+    .active {
+        background: rgba(255, 255, 255, 0.16);
+        border-radius: 999px;
+        color: #fff !important;
+    }
+}
+
+
 
 .navbar-nav:last-child {
     padding-inline-end: 2rem;
